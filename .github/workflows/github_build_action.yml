@@ -1,6 +1,11 @@
 name: Build and Test
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "Dockerfile"
 
 jobs:
   build:
@@ -9,4 +14,8 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
       - name: Build Docker Image
-        run: docker build -t news-processor .
+        run: docker build -t rash99/news-processor .
+      - name: Push Image to Docker Hub
+        run: |
+          docker login -u rash99 -p ${{ secrets.Docker_Hub_Token }}
+          docker push rash99/news-processor:latest
