@@ -1,0 +1,23 @@
+name: newsenv
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11.5
+  - pyspark
+  - pytorch
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - orjson
+  - pyarrow
+  - s3fs
+  - umap-learn
+  - onnxruntime
+  - spacy
+  - transformers
+  - gensim
+  - numba
+  - sqlalchemy
+  - pytest

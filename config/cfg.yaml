@@ -1,0 +1,7 @@
+target_words:
+  - "president"
+  - "the"
+  - "Asia"
+
+dataset:
+  news: "dataset/test.jsonl"
