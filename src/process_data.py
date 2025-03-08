@@ -53,7 +53,7 @@ def process_data(target_words: List[str], output_dir: str) -> None:
 
     # Convert the Arrow Table to a Pandas DataFrame
     df_output = table.to_pandas()
-    print("Process Data: ")
+    print(f"Print process data by reading the saved word_count_{today}.parq file: ")
     print(df_output)
 
     logging.info("Processing complete.")

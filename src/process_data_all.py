@@ -54,7 +54,7 @@ def process_data_all(output_dir: str) -> None:
 
     # Convert the Arrow Table to a Pandas DataFrame
     df_output = table.to_pandas()
-    print("Process data all: ")
+    print(f"Print process all data by reading the word_count_all_{today}.parq file: ")
     print(df_output)
 
     logging.info("Processing complete.")
