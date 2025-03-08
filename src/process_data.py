@@ -48,6 +48,7 @@ def process_data(target_words: List[str], output_dir: str) -> None:
         print("No data to write!")
 
     # Testing
+    
     # Read the Parquet file into an Arrow Table
     table = pq.read_table( f"{output_dir}/word_count_{today}.parq")
 

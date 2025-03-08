@@ -6,7 +6,6 @@ from pyspark.sql.functions import col, explode, split
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logging.info("Pipeline execution started: process_data_all.py")
