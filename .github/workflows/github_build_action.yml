@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "src"
+      - "src/process_data.py"
       - "Dockerfile"
 
 jobs:
