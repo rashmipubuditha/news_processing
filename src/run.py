@@ -1,6 +1,5 @@
 import argparse
 import yaml
-import os
 from process_data import process_data
 from process_data_all import process_data_all
 
@@ -10,11 +9,10 @@ def load_config(config_path):
         return yaml.safe_load(file)
 
 def main():
-    """Parses command-line arguments and runs the data processing pipeline."""
     parser = argparse.ArgumentParser(description="News Data Processing Pipeline")
     parser.add_argument("command", choices=["process_data", "process_data_all"], help="Command to execute")
     parser.add_argument("-cfg", "--config", required=True, help="Path to the configuration YAML file")
-    parser.add_argument("-dataset", required=True, help="Dataset name")
+    parser.add_argument("-dataset", required=True, help="Dataset")
     parser.add_argument("-dirout", required=True, help="Output directory for processed files")
 
     args = parser.parse_args()

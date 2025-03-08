@@ -29,8 +29,5 @@ COPY config /app/config
 COPY dataset /app/dataset
 COPY scripts /app/scripts
 
-# # Set the default command to run the script using the Conda environment
-# CMD ["/opt/conda/envs/newsenv/bin/python", "src/run.py", "process_data", "-cfg", "config/cfg.yaml", "-dataset", "news", "-dirout", "ztmp/data/"]
-
 # Run script
 ENTRYPOINT ["/bin/bash", "/app/scripts/run.sh"]

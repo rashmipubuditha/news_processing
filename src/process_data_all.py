@@ -9,6 +9,7 @@ import pyarrow.parquet as pq
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
+logging.info("Pipeline execution started: process_data_all.py")
 
 def create_spark_session() -> SparkSession:
     """Creates and returns a Spark session."""
@@ -17,8 +18,6 @@ def create_spark_session() -> SparkSession:
 def process_data_all(output_dir: str) -> None:
     """
     Process the AG News dataset using PySpark and count all unique words.
-
-    :param output_dir: Directory to save processed data.
     """
     # Create Spark session
     spark = create_spark_session()
@@ -36,6 +35,8 @@ def process_data_all(output_dir: str) -> None:
     # Ensure output directory exists
     os.makedirs(output_dir, exist_ok=True)
 
+    # Save the Output files
+
     today = datetime.today().strftime("%Y%m%d")
 
     if df_all_count.count() > 0:
@@ -47,12 +48,13 @@ def process_data_all(output_dir: str) -> None:
         print("No data to write!")
 
     # Testing
+
     # Read the Parquet file into an Arrow Table
     table = pq.read_table(f"{output_dir}/word_count_all_{today}.parq")
 
     # Convert the Arrow Table to a Pandas DataFrame
     df_output = table.to_pandas()
-
-    print("Process data all: ",df_output)
+    print("Process data all: ")
+    print(df_output)
 
     logging.info("Processing complete.")
