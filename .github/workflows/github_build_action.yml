@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "src/process_data.py"
+      - "src/process_data_all.py"
       - "Dockerfile"
 
 jobs:
